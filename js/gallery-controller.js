@@ -1,18 +1,45 @@
-'use strictx'
+'use strict'
+
+
+
+
+
+$('.submit-btn').click(function cotactMeSubmit(event) {
+    event.preventDefault()
+    console.log(event);
+
+    var elBody = $('[name=body-form]').val()
+    var elEmail = $('[name=email-form]').val()
+    var elSubject = $('[name=body-form]').val()
+
+    console.log(elEmail);
+    console.log(elBody);
+    console.log(elSubject);
+
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${elEmail}.com&su=${elSubject}&body=${elBody}`, '_blank');
+    $(".submit").trigger('reset');
+
+});
 
 
 
 $(function() {
     initPage()
-        // initModal()
-
-    // $('.include-html').load("projects/minesweeper/index.html");
-    // $('.include-html').load("projects/pacman/index.html");
-
-
 })
 
-function onInit() {}
+
+// function cotactMeSubmit(ev) {
+//     ev.preventDefault()
+//     console.log(ev);
+//     var elBody = $('[name=body-form]').val()
+//     var elEmail = $('[name=email-form]').val()
+//     var elSubject = $('[name=body-subject]').val()
+
+//     console.log(elEmail);
+
+
+// }
+
 
 function initPage() {
     var count = 0;
@@ -22,13 +49,13 @@ function initPage() {
     var strHTML = projects.map(function(project) {
         count++
 
-        return `<div class = "row" onclick="initModal('${project.id}')">
+        return `<div class = " row" onclick="initModal('${project.id}')">
 
-        <div class = "col-md-4 col-sm-6 portfolio-item" >
-        <a class = "portfolio-link" data-toggle="modal" href="#portfolioModal" >
+        <div class = "col col-md-4 col-sm-5 portfolio-item" >
+        <a class = " portfolio-link" data-toggle="modal" href="#portfolioModal" >
         <div class = "portfolio-hover"  >
         <div class = "portfolio-hover-content" >
-        <i class = "fa fa-plus fa-3x" > </i> </div> </div> <img class = "img-fluid" src = "img/portfolio/01-thumbnail.jpg" alt = "" >
+        <i class = "fa fa-8x" > </i> </div> </div> <img class = "img-fluid" src = "img/projects-portfolio/${project.id}.jpeg" alt = "" >
         </a> <div class = "portfolio-caption" >
         <h4 > ${project.name} </h4> <p class = "text-muted" > ${project.id} </p> </div> </div>
         `
