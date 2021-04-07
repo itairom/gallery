@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mine sweeper</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+
+<body style="background-color: linen;" onload="initGame()">
+    <h1 class="title">Minesweeper</h1>
+    <div class="dashboard">
+        <div class="left-dash">
+            <div>Time: <span class="timer">0</span></div>
+            <div>Marked: <span class="score">0</span></div>
+            <div>Best Time: <span class="best-time">0</span></div>
+            <div>Lives: <span class="lives">3</span></div>
+
+        </div>
+
+        <div class="get-hint">
+            <div class="bulbs-off">
+                <img class="bulb" onclick="setGlobalHint(this)" src="./img/bulb-off.png" alt="bulb">
+                <img class="bulb" onclick="setGlobalHint(this)" src="./img/bulb-off.png" alt="bulb">
+                <img class="bulb" onclick="setGlobalHint(this)" src="./img/bulb-off.png" alt="bulb">
+            </div>
+        </div>
+
+
+        <div class="safe">
+            <button class="safe-btn" onclick="setGlobalSafe()">Safe Click</button>
+            <div>Safe clicks: <span class="safe-count">3</span></div>
+
+        </div>
+
+        <button onclick="resetGame()" class="reset-btn">🙂</button>
+
+
+        <div class="levels">
+            <label for="male">Beginner:</label>
+            <input name="level" onclick="setLevel(0) " type="radio" value="Beginner"><br>
+            <label for=" male ">Medium:</label>
+            <input name="level" onclick="setLevel(1) " type="radio" value="Medium"><br>
+            <label for="male ">Expert:</label>
+            <input name="level" onclick="setLevel(2) " type="radio" value="Expert"><br>
+        </div>
+    </div>
+
+    <table class="board ">
+        <tbody class="game-board "></tbody>
+    </table>
+
+
+    <script src="./js/utils.js "></script>
+    <script src="./js/main.js "></script>
+
+</body>
+
+</html>
